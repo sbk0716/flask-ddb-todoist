@@ -1,6 +1,48 @@
-# Usage
+# 1. Project Overview
 
-## 1. docker-compose up
+## 1.1. Features
+This app is able to use below function.
+
+### User Story
+- Add a task.
+- Check detail of tasks.
+- See the list of tasks.
+- Delete tasks.
+- Change status of task.
+- Edit tasks.
+
+## 1.2. Project Structure
+```sh
+admin@gw-mac flask-ddb-todoist % tree -L 3
+.
+├── README.md
+├── api
+│   ├── Dockerfile
+│   ├── app.py
+│   ├── requirements.txt
+│   └── usecases
+│       ├── __init__.py
+│       └── task.py
+├── docker-compose.yml
+├── env.sample
+└── web
+    ├── Dockerfile
+    ├── app.py
+    ├── requirements.txt
+    └── templates
+        ├── create.html
+        ├── detail.html
+        ├── index.html
+        └── update.html
+
+4 directories, 15 files
+admin@gw-mac flask-ddb-todoist % 
+```
+
+
+# 2. Usage
+
+## 2.1. docker-compose up
 ```sh
 admin@gw-mac flask-ddb-todoist % docker-compose up -d --build  
 Creating network "flask-ddb-todoist_default" with the default driver
@@ -57,7 +99,7 @@ admin@gw-mac flask-ddb-todoist %
 ```
 
 
-## 2. create dynamodb table
+## 2.2. create dynamodb table
 ```sh
 admin@gw-mac flask-ddb-todoist % curl -I http://localhost:8000
 HTTP/1.1 400 Bad Request
@@ -119,7 +161,7 @@ admin@gw-mac flask-ddb-todoist %
 ```
 
 
-## 3. docker-compose exec
+## 2.3. docker-compose exec
 ```sh
 admin@gw-mac flask-ddb-todoist % docker-compose exec api /bin/ash
 /src # 
