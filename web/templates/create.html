@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK RESISTER</title>
+</head>
+<body>
+    <h2>Resister a new task</h2>
+    <form action="/create-task" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.task(size=20, placeholder="input task name") }}
+        <br>
+        {{ form.detail(size=50, placeholder="input task detail") }}
+        <br>
+        {{ form.status }}
+        <br>
+        {{ form.submit() }}
+    </form>
+    <a href="/">Top Page</a>
+</body>
+</html>

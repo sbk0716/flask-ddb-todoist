@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASK RESISTER</title>
+</head>
+<body>
+    <h1>Update a task</h1>
+    <h2>Former task</h2>
+    <h3>TASK: {{ tasks.task }}</h3>
+    <p>DETAIL: {{ tasks.detail }}</p>
+    <p>STATUS: {{ tasks.status }}</p>
+    <br>
+    <form action="/update/{{ tasks.task_id }}" method="post">
+        {{ form.hidden_tag() }}
+
+        {{ form.task(size=20, placeholder="input task name") }}
+        <br>
+        {{ form.detail(size=50, placeholder="input task detail") }}
+        <br>
+        {{ form.status }}
+        <br>
+        {{ form.submit() }}
+    </form>
+    <a href="/">Top Page</a>
+</body>
+</html>
